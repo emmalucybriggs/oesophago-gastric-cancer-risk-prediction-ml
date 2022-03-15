@@ -7,4 +7,4 @@ This repository provides the code used for the comparison of ML-based oesophago-
 
 **References:**
 
-(1) Stapley S, Peters TJ, Neal RD, Rose PW, Walter FM, Hamilton W. The risk of oesophago-gastric cancer in symptomatic patients in primary care: a large case–control study using electronic records. Br J Cancer. 2013 Jan;108(1):25–31. https://doi.org/10.1038/bjc.2012.551
+(1) Stapley S, Peters TJ, Neal RD, Rose PW, Walter FM, Hamilton W. The risk of oesophago-gastric cancer in symptomatic patients in primary care: a large case–control study using electronic records. Br J Cancer. 2013 Jan;108(1): 25–31. https://doi.org/10.1038/bjc.2012.551
