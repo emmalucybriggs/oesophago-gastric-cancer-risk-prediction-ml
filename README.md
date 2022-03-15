@@ -1,5 +1,5 @@
 # oesophago-gastric-cancer-risk-prediction-ml
-Oesophago-gastric cancer risk prediction on EHR data - comparison of a range of ML techniques 
+**Oesophago-gastric cancer risk prediction on EHR data - comparison of a range of ML techniques**
 
 This repository provides the code used for the comparison of ML-based oesophago-gastric cancer risk prediction models using primary care EHR data in comparison with existing Cancer Risk Assessment Tools (Cancer RATs) in the UK (1).
 
