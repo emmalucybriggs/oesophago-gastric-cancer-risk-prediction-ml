@@ -124,7 +124,7 @@ def generate_risk_score(test_element):
     
     return(max(riskscores))
 
-#generate risk scores for each element in the test dataset
+#generate risk scores for each element in the test dataset, data_test is the same test dataset as in ml_models.py
 
 for i in range(0, len(data_test)):
     to_test = data_test.iloc[i,[0,3,4,5,6,7,8,9,10,11,12,13,14,15,16]]
