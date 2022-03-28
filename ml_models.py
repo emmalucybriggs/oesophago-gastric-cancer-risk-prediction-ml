@@ -161,14 +161,14 @@ print('Testing labels shape: ', target_test.shape)
 threshold = 0.6 #set risk prediction threshold
 
 svm = LinearSVC()
-clf = CalibratedClassifierCV(svm) 
-clf.fit(data_train, target_train)
-test_probas = clf.predict_proba(data_test)
+svc_mod_1 = CalibratedClassifierCV(svm) 
+svc_mod_1.fit(data_train, target_train)
+test_probas = svc_mod_1.predict_proba(data_test)
 test_preds = (test_probas[:,1] >= threshold).astype('int')
 
 #print results
 
-print("Linear SVM with risk threshold "+ str(threshold) + ":")
+print("Linear SVM with risk threshold " + str(threshold) + ":")
 print('')
 print("Accuracy:",metrics.accuracy_score(target_test, test_preds))
 print("AUC/ROC score:", metrics.roc_auc_score(target_test, test_probas[:,1]))
@@ -201,9 +201,9 @@ gridsearched.best_params_
 
 threshold = 0.525 #set risk prediction threshold
 svm2 = SVC(C = 0.1, gamma = 1, kernel = 'rbf')
-clf2 = CalibratedClassifierCV(svm2) 
-clf2.fit(data_train, target_train)
-test_probas2 = clf2.predict_proba(data_test)
+svc_mod_2 = CalibratedClassifierCV(svm2) 
+svc_mod_2.fit(data_train, target_train)
+test_probas2 = svc_mod_2.predict_proba(data_test)
 test_preds2 = (test_probas2[:,1] >= threshold).astype('int')
 
 #print results
@@ -283,7 +283,7 @@ grid_search.best_params_
 
 
 #create model
-tuned_model = RandomForestClassifier(n_estimators = 250,
+tuned_rf_model = RandomForestClassifier(n_estimators = 250,
                                     bootstrap = True,
                                     criterion = 'entropy',
                                     max_features = 'auto',
@@ -293,15 +293,17 @@ tuned_model = RandomForestClassifier(n_estimators = 250,
                                     )
 
 #fit to entire training dataset 
-tuned_model.fit(data_train, target_train)
+tuned_rf_model.fit(data_train, target_train)
 
 #predictions for each class
-rf_predictions = tuned_model.predict(data_test)
+rf_predictions = tuned_rf_model.predict(data_test)
 # Probabilities for each class
-rf_probs = tuned_model.predict_proba(data_test)[:, 1]
+rf_probs = tuned_rf_model.predict_proba(data_test)[:, 1]
 
+#Altering risk prediction threshold
 threshold = 0.7 #set risk prediction threshold
-ranf_probs = tuned_model.predict_proba(data_test)
+
+ranf_probs = tuned_rf_model.predict_proba(data_test)
 predicted = (ranf_probs[:,1] >= threshold).astype('int')
 
 #performance on final test set, print results 
