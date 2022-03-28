@@ -306,8 +306,7 @@ predicted = (ranf_probs[:,1] >= threshold).astype('int')
 
 #performance on final test set
 accuracy = accuracy_score(target_test, predicted)
-roc_value = roc_auc_score(target_test, predicted)
-roc_value_2 = roc_auc_score(target_test, ranf_probs[:,1])
+roc_value = roc_auc_score(target_test, ranf_probs[:,1])
 precision= precision_score(target_test, predicted)
 recall = recall_score(target_test, predicted)
 f1 = f1_score(target_test, predicted)
