@@ -26,6 +26,12 @@ numpy 1.20.2
 
 matplotlib 3.3.4
 
+# Files
+* ml_models.py - development of ML classifiers and performance evaluation
+* RATs_tool.py - code used to implement the RATs model for oesophago-gastric cancer (1) and generate predictions
+* feature_importances.py - code used to generate feature importance graphs for models from ml_models.py
+* prediction_explanations.py - code used to generate explanations for individual predictions using models from ml_models.py
+
 # References
 
 (1) Stapley S, Peters TJ, Neal RD, Rose PW, Walter FM, Hamilton W. The risk of oesophago-gastric cancer in symptomatic patients in primary care: a large case–control study using electronic records. Br J Cancer. 2013 Jan; 108(1): 25–31. https://doi.org/10.1038/bjc.2012.551
