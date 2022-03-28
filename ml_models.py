@@ -304,24 +304,17 @@ threshold = 0.7 #set risk prediction threshold
 ranf_probs = tuned_model.predict_proba(data_test)
 predicted = (ranf_probs[:,1] >= threshold).astype('int')
 
-#performance on final test set
-accuracy = accuracy_score(target_test, predicted)
-roc_value = roc_auc_score(target_test, ranf_probs[:,1])
-precision= precision_score(target_test, predicted)
-recall = recall_score(target_test, predicted)
-f1 = f1_score(target_test, predicted)
-
-#print results 
+#performance on final test set, print results 
 
 print('MODEL: Random Forest, RISK THRESHOLD: ' + str(threshold))
 print('')
-print('Accuracy:', accuracy)
-print('AUC/ROC:', roc_value)
+print('Accuracy:', accuracy_score(target_test, predicted))
+print('AUC/ROC:', roc_auc_score(target_test, ranf_probs[:,1]))
 print('')
-print('Precision:', precision)
-print('Recall', recall)
+print('Precision:', precision_score(target_test, predicted))
+print('Recall', recall_score(target_test, predicted))
 print('')
-print('F1 score:', f1)
+print('F1 score:', f1_score(target_test, predicted))
 
 ##################################
 ## Model: Bernoulli Naïve Bayes ##
