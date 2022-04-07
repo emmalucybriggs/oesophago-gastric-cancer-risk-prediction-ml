@@ -1,4 +1,4 @@
-#Code used for plotting feature importances for models created in ml_models.py
+#Code used for plotting feature importance estimates for models created in ml_models.py
 
 #feature set as more easily readable names to display in feature importance graphs 
 
