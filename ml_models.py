@@ -144,7 +144,7 @@ target = og_data[target_feature]
 num_features = len(feature_set)
 
 #split into train and test
-data_train, data_test, target_train, target_test = train_test_split(data, target, test_size = 0.25, shuffle = True)
+data_train, data_test, target_train, target_test = train_test_split(data, target, test_size = 0.25, random_state = 42, shuffle = True)
 
 #check shapes
 print('Training data shape: ', data_train.shape)
@@ -240,7 +240,7 @@ grid_search.best_params_
 #result: 'solver' = 'sag', 'C' = 1
 
 #initialise logistic regression model 
-lr_mod = LogisticRegression(random_state=0, solver= 'sag', C=1)
+lr_mod = LogisticRegression(random_state=42, solver= 'sag', C=1)
 
 
 threshold = 0.8 #set risk threshold
