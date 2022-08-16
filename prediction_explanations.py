@@ -41,7 +41,7 @@ explainer = LimeTabularExplainer(data_train_np, class_names=class_names, feature
 
 #SVM (linear) explainer 
 
-idx = 91 #select individual observation to inspect 
+idx = 1 #select individual observation to inspect 
 thresh = threshold #choose threshold at which to observe prediction
 svm_exp = explainer.explain_instance(data_test_np[idx], clf.predict_proba, num_features=num_features)
 svm_probab = clf.predict_proba([data_test_np[idx]])[0,1]
@@ -57,7 +57,7 @@ svm_exp.show_in_notebook(show_table=True, show_all=True)
 
 #SVM (RBF) explainer 
 
-idx = 91 #select individual observation to inspect 
+idx = 1 #select individual observation to inspect 
 thresh = threshold #choose threshold at which to obersve prediction 
 svm_rbf_exp = explainer.explain_instance(data_test_np[idx], clf2.predict_proba, num_features=num_features)
 svm_rbf_probab = clf2.predict_proba([data_test_np[idx]])[0,1]
@@ -73,7 +73,7 @@ svm_rbf_exp.show_in_notebook(show_table=True, show_all=True)
 
 #Random Forest explainer
 
-idx = 91 #select individual observation to inspect
+idx = 1 #select individual observation to inspect
 thresh = threshold #choose threshold at which to observe prediction
 rf_exp = explainer.explain_instance(data_test_np[idx], tuned_model.predict_proba, num_features=num_features)
 forest_prob = tuned_model.predict_proba([data_test_np[idx]])[0,1]
@@ -89,7 +89,7 @@ rf_exp.show_in_notebook(show_table=True, show_all=True)
 
 #Logistic Regression explainer 
 
-idx = 91 #select individual observation to inspect 
+idx = 1 #select individual observation to inspect 
 thresh = threshold #choose threshold at which to observe prediction 
 lr_exp = explainer.explain_instance(data_test_np[idx], lr_mod.predict_proba, num_features=num_features)
 lr_probab = lr_mod.predict_proba([data_test_np[idx]])[0,1]
@@ -107,7 +107,7 @@ lr_exp.show_in_notebook(show_table=True, show_all=True)
 
 xgb_mod.fit(data_train_np, target_train_np) #fit model to np array version of training data
 
-idx = 91 #select individual observation to inspect
+idx = 1 #select individual observation to inspect
 thresh = threshold #choose threshold at which to observe prediction 
 xgb_exp = explainer.explain_instance(data_test_np[idx], xgb_mod.predict_proba, num_features=num_features)
 xgb_prob = xgb_mod.predict_proba([data_test_np[idx]])[0,1]
@@ -128,7 +128,7 @@ explainer_nb = LimeTabularExplainer(data_train_nb_np, class_names=class_names, f
 
 bnb.fit(data_train_nb_np, target_train_nb_np) #fit model to np array version of training data
 
-idx = 91 #select individual observation to inspect
+idx = 1 #select individual observation to inspect
 thresh = threshold #choose threshold at which to observe prediction
 bnb_exp = explainer.explain_instance(data_test_nb_np[idx], bnb.predict_proba, num_features=num_features)
 bnb_prob = bnb.predict_proba([data_test_nb_np[idx]])[0,1]
