@@ -31,7 +31,7 @@ from matplotlib.gridspec import GridSpec
 
 og_data = #insert dataset here 
 
-np.random.seed(33)
+np.random.seed(42)
 
 
 #####################################
