@@ -339,7 +339,7 @@ target_nb = og_data[target_feature]
 num_features = len(feature_set_nb)
 
 #split into train and test
-data_train_nb, data_test_nb, target_train_nb, target_test_nb = train_test_split(data_nb, target_nb, test_size = 0.25, shuffle = True)
+data_train_nb, data_test_nb, target_train_nb, target_test_nb = train_test_split(data_nb, target_nb, test_size = 0.25, random_state = 42, shuffle = True)
 
 
 threshold = 0.5 #set risk prediction threshold
